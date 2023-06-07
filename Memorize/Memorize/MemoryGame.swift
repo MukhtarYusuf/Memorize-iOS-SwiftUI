@@ -20,4 +20,15 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
+        cards = []
+        for pairIndex in 0 ..< numberOfPairsOfCards {
+            let content = createCardContent(pairIndex)
+            cards.append(Card(content: content, id: pairIndex * 2))
+            cards.append(Card(content: content, id: pairIndex * 2 + 1))
+        }
+        
+        cards.shuffle()
+    }
+    
 }
