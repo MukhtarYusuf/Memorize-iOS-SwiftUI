@@ -31,4 +31,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         cards.shuffle()
     }
     
+    struct Card: Identifiable {
+}
 }
