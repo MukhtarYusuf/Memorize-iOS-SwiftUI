@@ -41,5 +41,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 }
             }
         }
+        private mutating func startUsingBonusTime() {
+        }
+        private mutating func stopUsingBonusTime() {
+        }
+    }
 }
 }
