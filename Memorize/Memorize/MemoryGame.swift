@@ -93,6 +93,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         
         // called when the card transitions to face up state
         private mutating func startUsingBonusTime() {
+            if isConsumingBonusTime, lastFaceUpDate == nil {
+                lastFaceUpDate = Date()
+            }
         }
         private mutating func stopUsingBonusTime() {
         }
