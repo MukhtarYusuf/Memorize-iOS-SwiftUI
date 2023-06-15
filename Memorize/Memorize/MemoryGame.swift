@@ -97,7 +97,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 lastFaceUpDate = Date()
             }
         }
+        
         private mutating func stopUsingBonusTime() {
+            pastFaceUpTime = faceUpTime
+            self.lastFaceUpDate = nil
         }
     }
 }
