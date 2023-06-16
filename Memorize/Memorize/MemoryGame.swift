@@ -104,4 +104,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
 }
+
+extension Array {
+    var oneAndOnly: Element? {
+        count == 1 ? first : nil
+    }
 }
