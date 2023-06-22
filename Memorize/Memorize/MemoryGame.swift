@@ -50,6 +50,16 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         cards.shuffle()
     }
     
+    private func index(of card: Card) -> Int? {
+        for index in 0 ..< cards.count {
+            if cards[index].id == card.id {
+                return index
+            }
+        }
+        
+        return nil
+    }
+    
     struct Card: Identifiable {
         var isFaceUp = false {
             didSet {
